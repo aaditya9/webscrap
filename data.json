@@ -1,0 +1,102 @@
+{
+    "data": [
+        {
+            "Title": "Kirona-DRS 5.5.3.5 - Information Disclosure",
+            "Platform": "PHP",
+            "Author": "RAMIKAN",
+            "DownloadLink": "https://www.exploit-db.com/download/47498",
+            "CVE": "2019-17503 2019-17504"
+        },
+        {
+            "Title": "Ajenti 2.1.31 - Remote Code Execution",
+            "Platform": "Python",
+            "Author": "Jeremy Brown",
+            "DownloadLink": "https://www.exploit-db.com/download/47497",
+            "CVE": "N/A"
+        },
+        {
+            "Title": "Express Invoice 7.12 - 'Customer' Persistent Cross-Site Scripting",
+            "Platform": "PHP",
+            "Author": "DEBASHIS PAL",
+            "DownloadLink": "https://www.exploit-db.com/download/47496",
+            "CVE": "N/A"
+        },
+        {
+            "Title": "ActiveFax Server 6.92 Build 0316 - 'POP3 Server' Denial of Service",
+            "Platform": "WINDOWS",
+            "Author": "STRESSER",
+            "DownloadLink": "https://www.exploit-db.com/download/47495",
+            "CVE": "N/A"
+        },
+        {
+            "Title": "SpotAuditor 5.3.1.0 - Denial of Service",
+            "Platform": "WINDOWS",
+            "Author": "SANJANA SHETTY",
+            "DownloadLink": "https://www.exploit-db.com/download/47494",
+            "CVE": "N/A"
+        },
+        {
+            "Title": "Uplay 92.0.0.6280 - Local Privilege Escalation",
+            "Platform": "WINDOWS",
+            "Author": "KUSOL WATCHARA-APANUKORN",
+            "DownloadLink": "https://www.exploit-db.com/download/47493",
+            "CVE": "N/A"
+        },
+        {
+            "Title": "WordPress Arforms 3.7.1 - Directory Traversal",
+            "Platform": "PHP",
+            "Author": "AHMAD ALMORABEA",
+            "DownloadLink": "https://www.exploit-db.com/download/47492",
+            "CVE": "N/A"
+        },
+        {
+            "Title": "WordPress Arforms 3.7.1 - Directory Traversal",
+            "Platform": "NOT FOUND",
+            "Author": "NOT FOUND",
+            "DownloadLink": "NOT FOUND",
+            "CVE": "NOT FOUND"
+        },
+        {
+            "Title": "National Instruments Circuit Design Suite 14.0 - Local Privilege Escalation",
+            "Platform": "WINDOWS",
+            "Author": "IVAN MARMOLEJO",
+            "DownloadLink": "https://www.exploit-db.com/download/47490",
+            "CVE": "N/A"
+        },
+        {
+            "Title": "Windows Kernel - Out-of-Bounds Read in CI!HashKComputeFirstPageHash While Parsing Malformed PE File",
+            "Platform": "WINDOWS",
+            "Author": "GOOGLE SECURITY RESEARCH",
+            "DownloadLink": "https://www.exploit-db.com/download/47488",
+            "CVE": "2019-1346"
+        },
+        {
+            "Title": "Windows Kernel - Out-of-Bounds Read in nt!MiParseImageLoadConfig While Parsing Malformed PE File",
+            "Platform": "WINDOWS",
+            "Author": "GOOGLE SECURITY RESEARCH",
+            "DownloadLink": "https://www.exploit-db.com/download/47487",
+            "CVE": "2019-1345"
+        },
+        {
+            "Title": "Windows Kernel - Out-of-Bounds Read in nt!MiParseImageLoadConfig While Parsing Malformed PE File",
+            "Platform": "NOT FOUND",
+            "Author": "NOT FOUND",
+            "DownloadLink": "NOT FOUND",
+            "CVE": "NOT FOUND"
+        },
+        {
+            "Title": "Windows Kernel - Out-of-Bounds Read in nt!MiParseImageLoadConfig While Parsing Malformed PE File",
+            "Platform": "NOT FOUND",
+            "Author": "NOT FOUND",
+            "DownloadLink": "NOT FOUND",
+            "CVE": "NOT FOUND"
+        },
+        {
+            "Title": "Windows Kernel - win32k.sys TTF Font Processing Pool Corruption in win32k!ulClearTypeFilter",
+            "Platform": "WINDOWS",
+            "Author": "GOOGLE SECURITY RESEARCH",
+            "DownloadLink": "https://www.exploit-db.com/download/47484",
+            "CVE": "2019-1364"
+        }
+    ]
+}
