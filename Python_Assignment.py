@@ -4,10 +4,6 @@ import csv
 from bs4 import BeautifulSoup
 import re
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
 import time
 import json
 # from pyvirtualdisplay import Display
@@ -65,7 +61,7 @@ def getdata():
 			                'CVE':cve
 			            })
 					driver2.close()
-
+					print(resultData)
 				except:
 					print('Url doesnot open for document !!')
 				time.sleep(4)
@@ -74,13 +70,14 @@ def getdata():
 			next=driver.find_element_by_xpath('//*[@id="exploits-table_next"]/a')
 			next.click()
 			time.sleep(2)
-
-		with open('data.json', 'w') as filepointer:
-			json.dump(resultData, filepointer, indent=4)
-
 		# display.stop()
 	except:
 		print('Website cant reached !! Try again')           #Here we can get information which is  no internet or problem to load the website
+
+	with open('data.json', 'w') as filepointer:
+		json.dump(resultData, filepointer, indent=4)
+
+
 
 if __name__ == "__main__":
 	getdata()                                                #program exicution start from here

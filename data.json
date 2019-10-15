@@ -1,3 +1,18 @@
 {
-    "data": []
+    "data": [
+        {
+            "Title": "sudo 1.2.28 - Security Bypass",
+            "Platform": "LINUX",
+            "Author": "MOHIN PARAMASIVAM",
+            "DownloadLink": "https://www.exploit-db.com/download/47502",
+            "CVE": "N/A"
+        },
+        {
+            "Title": "Bolt CMS 3.6.10 - Cross-Site Request Forgery",
+            "Platform": "PHP",
+            "Author": "R3M0T3NU11",
+            "DownloadLink": "https://www.exploit-db.com/download/47501",
+            "CVE": "N/A"
+        }
+    ]
 }
