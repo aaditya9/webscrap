@@ -1,31 +1,36 @@
+import sys
 import requests
-import json
+import csv
 from bs4 import BeautifulSoup
 import re
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
 import time
+import json
+# from pyvirtualdisplay import Display
+resultData={"data" : []}
 
 def getdata():
-	result={"data" : []}
 	try:
-		for page in range(0,10):												# loop
-			driver = webdriver.Chrome(executable_path='chromedriver')
-			driver.get('https://www.exploit-db.com')
-			time.sleep(5) 														#Waiting to render all data on site
-			tableData=[]
-			try:
-				data=driver.find_element_by_xpath('//*[@id="exploits-table_wrapper"]/div[2]/div') # we get tbody data
-				tableData=data.find_elements_by_tag_name('tr')
-			except:
-				print('Server Down')
+		# display = Display(visible=0, size=(800, 600))
+		# display.start()
+		driver = webdriver.Chrome(executable_path='chromedriver')
+		driver.get('https://www.exploit-db.com')                     #Request to url
+		time.sleep(5)
+		for page in range(0,10):
+			data=driver.find_element_by_xpath('//*[@id="exploits-table_wrapper"]/div[2]/div')    #Get selenium object of whole table structure
+			tableData=data.find_elements_by_tag_name('tr')                                       #Get All table rows information
 
 			for iter in range(0,len(tableData)-1):
 				try:
 					link=tableData[iter].find_element_by_xpath('//*[@id="exploits-table"]/tbody/tr['+str(iter+1)+']/td[5]/a').get_attribute('href') # getting here title link
+					time.sleep(2)
 					driver2 = webdriver.Chrome(executable_path='chromedriver')
+					time.sleep(2)
 					driver2.get(link)
-					time.sleep(2)												#Waiting to render all data on site
-					# print('got driver2',driver2.get(link))
 					try:
 						cve = driver2.find_element_by_xpath('/html/body/div/div[2]/div[2]/div/div/div[1]/div/div[2]/div[1]/div[1]/div/div[1]/div/div/div/div[2]/h6').text 	# It will give text from this position of website
 					except:
@@ -51,8 +56,8 @@ def getdata():
 					except:
 						platform = 'NOT FOUND'
 
-					# print(cve, author,  title, downloadLink,platform)
-					result["data"].append({
+					print(cve, author,  title, downloadLink,platform)
+					resultData["data"].append({
 			                'Title':title,
 			                'Platform':platform,
 			                'Author':author,
@@ -60,21 +65,22 @@ def getdata():
 			                'CVE':cve
 			            })
 					driver2.close()
+
 				except:
 					print('Url doesnot open for document !!')
-			try:
-				driver.find_element_by_xpath('//*[@id="exploits-table_next"]/a').click()
-				time.sleep(2)
-			except:
-				print('Url for next page link is not getting!')
+				time.sleep(4)
+
+			time.sleep(5)
+			next=driver.find_element_by_xpath('//*[@id="exploits-table_next"]/a')
+			next.click()
+			time.sleep(2)
 
 		with open('data.json', 'w') as filepointer:
-			json.dump(result, filepointer, indent=4)
+			json.dump(resultData, filepointer, indent=4)
 
-	except Exception as error:
-		print('Website is not loading')
-		print(error)
-		# return
+		# display.stop()
+	except:
+		print('Website cant reached !! Try again')           #Here we can get information which is  no internet or problem to load the website
 
 if __name__ == "__main__":
-	getdata() 																	# Call the function which gives scrap of site
+	getdata()                                                #program exicution start from here
