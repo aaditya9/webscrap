@@ -9,4 +9,4 @@ sudo pip3 install -r requirement.txt
 ```
 After above installation install chromedriver for selenium
 
-
+It takes 24 mins to complete.
